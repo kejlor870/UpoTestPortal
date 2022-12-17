@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap');
+
+body{
+    background-color: #FEFCF3;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+#logIn{
+    background-color: #DFD3C3;
+    text-align: center;
+    font-size: 1.5vw;
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 200px;
+    border-radius: 15px;
+
+}
+
+#logIn h1{
+    padding-top: 30px;
+
+}
+
+#logIn p{
+    font-size: 1.3vw;
+    margin: 0;
+
+}
+
+#logIn input{
+    margin-bottom: 10%;
+    
+}
+
+#submitcss{
+    background-color: #F5EBE0;
+    border: 0;
+    border-radius: 10px;
+    font-size: 1.2vw;
+    padding: 5px 20px 5px 20px;
+
+}
+
+#submitcss:hover{
+    cursor: pointer;
+
+}
+
+.formInput{
+    border: 0.5px solid #d0b8a89f;
+    background-color: #F5EBE0;
+    height: 25px;
+    width: 60%;
+    border-radius: 10px;
+
+}
+
+
+
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+    #logIn {
+      font-size: 30px;
+      width: 90%;
+      margin-top: 200px;
+    }
+
+    #logIn p{
+        font-size: 30px;
+        margin: 0;
+    
+    }
+
+    #submitcss{
+        font-size: 30px;
+    }
+
+
+}
+
+@media screen and (max-width: 400px) {
+    #logIn {
+        font-size: 30px;
+        width: 90%;
+        margin-top: 100px;
+    }
+
+}
