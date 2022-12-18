@@ -87,7 +87,7 @@ header #profilPicture:hover{
 }
 
 main{
-    background-color: none; /* ------ MAIN ------ */
+    background-color: red; /* ------ MAIN ------ */
     padding: 50px 60px 50px 60px;
 
 }
@@ -101,6 +101,8 @@ main nav{
     padding-top: 20px;
     margin: 0 45px 50px 40px;
     float: left;
+    border-radius: 10px;
+    box-shadow: 0px 21px 54px -23px rgba(66, 68, 90, 1);
 
 }
 
@@ -132,6 +134,19 @@ main .test .dot{
 
 }
 
+main .wynik{
+    box-sizing: border-box;
+    background-color: #D0B8A8;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    padding-left: 10%;
+    border-radius: 5px;
+
+}
+
+
 main .test button{
     background-color: #D0B8A8;
     border: 0;
@@ -139,6 +154,7 @@ main .test button{
     font-size: 1.5vw;
     margin-bottom: 20px;
     margin-top: 10px;
+    border-radius: 5px;
 
 }
 
@@ -150,6 +166,73 @@ main .test button:hover{
 a{
     text-decoration: none;
     color: black;
+
+}
+
+/* Test maker style */
+#formAddTest{
+    box-sizing: border-box;
+    background-color: #DFD3C3;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 40px;
+    text-align: center;
+
+}
+
+#formAddTest p{
+    margin: 0;
+    font-size: 1vw;
+
+}
+
+#titleInput{
+    border: 0.5px solid #D0B8A8;
+    background-color: #F5EBE0;
+    height: 55px;
+    width: 60%;
+    font-size: 1.2vw;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 50px;
+
+}
+
+.klasaANDtime{
+    border: 0.5px solid #D0B8A8;
+    background-color: #F5EBE0;
+    height: 30px;
+    width: 20%;
+    font-size: 1vw;
+    text-align: center;
+    border-radius: 5px;
+    margin-bottom: 30px;
+
+}
+
+#formAddTest hr{
+    height: 3px;
+    width: 98%;
+    background-color: #7D6E83;
+    border: 0;
+
+}
+
+#letDown{
+    padding-top: 30px;
+
+}
+
+.toLeft{
+    height: fit-content;
+    width: auto;
+    margin-right: 50px;
+
+}
+
+.toLeft input{
+    width: 21%;
 
 }
 
@@ -208,6 +291,60 @@ a{
     
     }
 
+    /* ddddd */
+
+    #formAddTest{
+        width: 100%;
+        padding-top: 40px;
+    
+    }
+    
+    #formAddTest p{
+        margin: 0;
+        font-size: 20px;
+    
+    }
+    
+    #titleInput{
+        border: 0.5px solid #D0B8A8;
+        height: 35px;
+        width: 70%;
+        font-size: 10px;
+    
+    }
+    
+    .klasaANDtime{
+        height: 30px;
+        width: 60%;
+        font-size: 15px;
+    
+    }
+    
+    #formAddTest hr{
+        height: 3px;
+        width: 96%;
+        background-color: #7D6E83;
+        border: 0;
+    
+    }
+    
+    #letDown{
+        padding-top: 30px;
+    
+    }
+    
+    .toLeft{
+        height: fit-content;
+        width: auto;
+        margin-left: 50px;
+    
+    }
+    
+    .toLeft input{
+        width: 90%;
+    
+    }
+
 }
 
 @media screen and (max-width: 400px) {
@@ -217,4 +354,10 @@ a{
         margin-top: 100px;
     }
 
+    #titleInput{
+        font-size: 15px;
+    
+    }
+
+ 
 }

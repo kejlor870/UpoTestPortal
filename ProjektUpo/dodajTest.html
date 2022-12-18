@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <link rel="icon" type="image/png" href="images/icon.png">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet">
+    <!-- -->
+    <title>Dodaj test - Nauczyciel - Testy</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <header>
+        <h1>Dodaj test</h1>
+
+        <section id="profilPicture">
+            <img src="images/profilPicture.png" height="80" title="Wyloguj się">
+        </section>
+    </header>
+    
+    <main>
+        <section id="formAddTest">
+            <form method="post">
+                <p>Tytuł testu:</p>
+                <input type="text" name="titleTest" id="titleInput" placeholder="Tytuł">
+
+                <p>Klasa:</p>
+                <select name="klasa" class="klasaANDtime"> 
+                    <option value="default">Wybierz klase</option>
+                    <option value="1TPro">1TPro</option>
+                    <option value="2TPro">2TPro</option>
+                    <option value="3TPro">3TPro</option>
+                </select>
+
+                <p>Czas w minutach:</p>
+                <input type="number" name="time" class="klasaANDtime">
+
+                <hr>
+
+                <p id="letDown">Liczba pytań: <input type="number" id="numberOfQuestions" name="numberOfQuestions" class="klasaANDtime"></p>
+
+                <section class="toLeft">
+                    <p>Liczba odpowiedzi: <input type="number" id="numberOfAnswers" name="numberOfAnswers" class="klasaANDtime" onkeyup="generujPola()"></p>
+                </section>
+
+                <hr>
+
+                <div id="pytanka">
+                    
+                </div>
+
+                <script>
+                    function generujPola(){
+                        document.getElementById("pytanka").innerHTML = '';
+
+                        let liczbaPytan = Number(document.getElementById("numberOfQuestions").value);
+                        let liczbaOdpowiedzi = Number(document.getElementById("numberOfAnswers").value);
+
+                        for(let i=1; i<=liczbaPytan; i++){
+                            document.getElementById("pytanka").innerHTML += '<h1>Pytanie '+i+': <input type="text"></h1> <p>Dobra odpowiedź: <input type="text"></p>';
+                            
+                            for(let k=1; k<liczbaOdpowiedzi; k++){
+                                document.getElementById("pytanka").innerHTML += '<p>Zła odpowiedź: <input type="text"></p>';
+                            }
+
+                        }
+                        //document.getElementById("pytanka").innerHTML = '<h1>Pytanie: <input type="text"></h1><p>Dobra odpowiedź: <input type="text"></p><p>Zła odpowiedź: <input type="text"></p><p>Zła odpowiedź: <input type="text"></p><p>Zła odpowiedź: <input type="text"></p>';
+
+                    }
+
+                </script>
+
+            </form>
+        </section>
+    </main>
+</body>
+</html>
