@@ -262,6 +262,21 @@ a{
 
 }
 
+#pytanka input[type=submit]{
+    background-color: #D0B8A8;
+    width: 40%;
+    border: 0;
+    border-radius: 10px;
+    font-size: 1.2vw;
+    padding: 10px 20px 10px 20px;
+    margin: 20px 0 50px 0;
+
+}
+
+#pytanka input[type=submit]:hover{
+    cursor: pointer;
+}
+
 
 /* Responsive */
 @media screen and (max-width: 600px) {
@@ -368,6 +383,12 @@ a{
     
     .toLeft input{
         width: 90%;
+    
+    }
+
+    #pytanka input[type=submit]{
+        width: 80%;
+        font-size: 20px;
     
     }
 

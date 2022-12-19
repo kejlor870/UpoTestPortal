@@ -62,24 +62,29 @@
                     <p>Zła odpowiedź: <input type="text" class="answersStyle"></p>
                     <p>Zła odpowiedź: <input type="text" class="answersStyle"></p>
                     <p>Zła odpowiedź: <input type="text" class="answersStyle"></p> -->
-                    
+
                 </div>
 
                 <script>
                     function generujPola(){
                         document.getElementById("pytanka").innerHTML = '';
+                        document.getElementById("pytanka").innerHTML += '<form method="POST">';
 
                         let liczbaPytan = Number(document.getElementById("numberOfQuestions").value);
                         let liczbaOdpowiedzi = Number(document.getElementById("numberOfAnswers").value);
 
                         for(let i=1; i<=liczbaPytan; i++){
-                            document.getElementById("pytanka").innerHTML += '<h1>Pytanie '+i+': <input type="text" class="questionStyle"></h1> <p>Dobra odpowiedź: <input type="text" class="answersStyle"></p>';
+                            document.getElementById("pytanka").innerHTML += '<h1>Pytanie '+i+': <input type="text" class="questionStyle" name="pytanie'+i+'"></h1> <p>Dobra odpowiedź: <input type="text" class="answersStyle" name="dodpowiedz'+i+'"></p>';
                             
                             for(let k=1; k<liczbaOdpowiedzi; k++){
-                                document.getElementById("pytanka").innerHTML += '<p>Zła odpowiedź: <input type="text" class="answersStyle"></p>';
+                                document.getElementById("pytanka").innerHTML += '<p>Zła odpowiedź: <input type="text" class="answersStyle" name="zodpowiedz'+k+'"></p>';
                             }
 
                         }
+                        
+                        document.getElementById("pytanka").innerHTML += '<input type="submit" value="Zapisz">';
+
+                        document.getElementById("pytanka").innerHTML += '</form>';
                         //document.getElementById("pytanka").innerHTML = '<h1>Pytanie: <input type="text"></h1><p>Dobra odpowiedź: <input type="text"></p><p>Zła odpowiedź: <input type="text"></p><p>Zła odpowiedź: <input type="text"></p><p>Zła odpowiedź: <input type="text"></p>';
 
                     }
