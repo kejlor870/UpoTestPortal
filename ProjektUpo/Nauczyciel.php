@@ -42,21 +42,31 @@
 
             if (mysqli_num_rows($wynik) > 0) {
                 while($wiersz = mysqli_fetch_assoc($wynik)) {
-                    echo "<nav class='test'>";
+                    if($wiersz['czas']<5 && $wiersz['czas']>1){
+                        $nazwaMinut = "minuty";
+                    }else if($wiersz['czas']==1){
+                        $nazwaMinut = "minuta";
+                    }else{
+                        $nazwaMinut = "minut";
+                    }
+
+                    echo "<nav class='test' >";
                     echo "<h1>" . $wiersz['tytul'] . "</h1>";
                     echo "<p><img src='images/dot.png' class='dot'> Liczba pytań: " . $wiersz['liczba_pytan'] . "</p>";
                     echo "<p><img src='images/dot.png' class='dot'> Klasa: " . $wiersz['nazwa_klasy'] . "</p>";
-                    echo "<p><img src='images/dot.png' class='dot'> Czas: " . $wiersz['czas'] . " minut</p>";
+                    echo "<p><img src='images/dot.png' class='dot'> Czas: " . $wiersz['czas'] . " $nazwaMinut</p>";
                     
-                    echo "<button type='button'>Edytuj</button>";
+                    echo "<a href='usunTestNauczyciel.php?titleToDel=" . $wiersz['tytul'] . "'><button type='button'>Usuń</button></a>";
                     echo "<br>";
-                    echo "<button type='button'>Pokaz odpowiedzi</button>";
+                    echo "<a href='odpowiedziUczniow.php?tytulTestuODP=" . $wiersz['tytul'] . "'><button type='button'>Pokaz odpowiedzi</button></a>";
                     echo "</nav>";
 
                 }
             }
 
         ?>
+
+        </form>
 
         <!-- <nav class="test">
             <h1>Biologia</h1>

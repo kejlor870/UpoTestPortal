@@ -87,7 +87,7 @@ header #profilPicture:hover{
 }
 
 main{
-    background-color: red; /* ------ MAIN ------ */
+    background-color: none; /* ------ MAIN ------ */
     padding: 50px 60px 50px 60px;
 
 }
@@ -262,6 +262,7 @@ a{
 
 }
 
+
 #pytanka input[type=submit]{
     background-color: #D0B8A8;
     width: 40%;
@@ -270,11 +271,13 @@ a{
     font-size: 1.2vw;
     padding: 10px 20px 10px 20px;
     margin: 20px 0 50px 0;
+    transition: .2s ease-in-out 0s;
 
 }
 
 #pytanka input[type=submit]:hover{
     cursor: pointer;
+    transform: scale(1.15);
 }
 
 
@@ -331,6 +334,7 @@ a{
         font-size: 25px;
     
     }
+
 
     /* ddddd */
 
@@ -392,6 +396,7 @@ a{
     
     }
 
+
 }
 
 @media screen and (max-width: 400px) {
@@ -405,6 +410,5 @@ a{
         font-size: 15px;
     
     }
-
  
 }

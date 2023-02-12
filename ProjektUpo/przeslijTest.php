@@ -12,13 +12,6 @@
     $pytania = array(); 
     $odpowiedzi = array();
 
-    echo "ID nauczyciela: " . $_SESSION['id'] . "<br>";
-    echo $tytulTestu . "<br>";
-    echo "ID klasy: " . $klasa . "<br>";
-    echo $czas . "<br>";
-    echo $liczba_pytan . "<br>";
-    echo $liczba_odpowiedzi . "<br>";
-
     // Zapisanie pytan do tablicy
 
     for($i=1; $i<=$liczba_pytan; $i++){
@@ -60,12 +53,52 @@
     VALUES ('', '$tytulTestu', '$id_nauczyciela', '$klasa', '$liczba_pytan', '$czas');";
 
     if(mysqli_query($baza, $sql)){
-        echo "Dodano test do bazy danych!";
-        sleep(60);
+
+        //Przesylanie pytan do bazy danych
+
+        $sql = "SELECT id FROM testy WHERE tytul = '$tytulTestu' AND id_nauczyciela = $id_nauczyciela";
+        $dane = mysqli_fetch_assoc(mysqli_query($baza, $sql));
+
+        $id_testu = $dane['id'];
+        $mOdpowiedzi = 1; // Miejsce Odpowiedzi
+        $maxModpowiedzi = $liczba_odpowiedzi;
+
+        for($i=1; $i<=$liczba_pytan; $i++){
+            $sql = "INSERT INTO pytania(id, id_testu, pytanie) VALUES ('', '$id_testu', '$pytania[$i]');";
+            if (mysqli_query($baza, $sql)) {
+                echo "Nowy rekord utworzony prawidłowo.";
+
+                //Przesylanie odpowiedzi do bazy danych
+
+                $sql = "SELECT id FROM pytania WHERE pytanie = '$pytania[$i]';";
+                $dane2 = mysqli_fetch_assoc(mysqli_query($baza, $sql));
+
+                $id_pytania = $dane2['id'];
+
+                for($mOdpowiedzi; $mOdpowiedzi<=$maxModpowiedzi; $mOdpowiedzi++){
+                    $sql = "INSERT INTO odpowiedzi(id, id_pytania, odpowiedz) VALUES ('', '$id_pytania', '$odpowiedzi[$mOdpowiedzi]')";
+                    mysqli_query($baza, $sql);
+                   
+                }
+                
+                $maxModpowiedzi += $liczba_odpowiedzi; 
+
+            } else {
+                echo "Błąd: " . $sql . " " . mysqli_error($baza);
+            }
+
+        }
+
+
         header('Location: Nauczyciel.php');
     }else{
         echo "Błąd: " . $sql . " " . mysqli_error($baza);
     }
+
+    
+    
+
+    
 
 
 ?>
